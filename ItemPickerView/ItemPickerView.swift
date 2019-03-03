@@ -304,7 +304,7 @@ extension ItemPickerView: UICollectionViewDelegate, UICollectionViewDelegateFlow
 extension ItemPickerView {
     /// Selects the item at the given index with or without animation.
     public func selectItem(at index: Int, animated: Bool) {
-        if index - 1 < 0 || index >= self.numberOfItems {
+        if index < 0 || index >= self.numberOfItems {
             print("ERROR: Index (\(index) out of range.")
             return
         }
