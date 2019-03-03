@@ -6,7 +6,6 @@
 //  Copyright © 2019 Theodore Gallao. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 internal class ItemCollectionViewCell: UICollectionViewCell {

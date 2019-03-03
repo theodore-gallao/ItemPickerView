@@ -10,6 +10,8 @@
 		8032A4F2222A0E7B0096B945 /* ItemPickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 8032A4F0222A0E7B0096B945 /* ItemPickerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8032A4F9222A0EB60096B945 /* ItemPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8032A4F8222A0EB60096B945 /* ItemPickerView.swift */; };
 		8032A4FB222A0ED00096B945 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8032A4FA222A0ED00096B945 /* ItemCollectionViewCell.swift */; };
+		809AEE25222C6C3F000D12FE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 809AEE23222C6C3F000D12FE /* README.md */; };
+		809AEE28222C6D02000D12FE /* ItemPickerView.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 809AEE27222C6D02000D12FE /* ItemPickerView.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +20,8 @@
 		8032A4F1222A0E7B0096B945 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8032A4F8222A0EB60096B945 /* ItemPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemPickerView.swift; sourceTree = "<group>"; };
 		8032A4FA222A0ED00096B945 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		809AEE23222C6C3F000D12FE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		809AEE27222C6D02000D12FE /* ItemPickerView.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ItemPickerView.podspec; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +57,9 @@
 				8032A4F8222A0EB60096B945 /* ItemPickerView.swift */,
 				8032A4FA222A0ED00096B945 /* ItemCollectionViewCell.swift */,
 				8032A4F0222A0E7B0096B945 /* ItemPickerView.h */,
+				809AEE27222C6D02000D12FE /* ItemPickerView.podspec */,
 				8032A4F1222A0E7B0096B945 /* Info.plist */,
+				809AEE23222C6C3F000D12FE /* README.md */,
 			);
 			path = ItemPickerView;
 			sourceTree = "<group>";
@@ -127,6 +133,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				809AEE28222C6D02000D12FE /* ItemPickerView.podspec in Resources */,
+				809AEE25222C6C3F000D12FE /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
