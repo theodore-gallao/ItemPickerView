@@ -1,2 +1,2 @@
 # ItemPickerView
-Swipe horizontally through segmented items. 
+Swipe horizontally to select through segmented items. 
