@@ -48,45 +48,45 @@ public protocol ItemPickerViewDataSource {
 /// Represents an item used for `ItemPickerView`
 public struct Item {
     /// The text of this item
-    var text: String = ""
+    public var text: String = ""
     
     /// The font of this item's text
-    var font: UIFont = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.regular)
+    public var font: UIFont = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.regular)
     
     /// The text color of this item
-    var color: UIColor = UIColor.gray
+    public var color: UIColor = UIColor.gray
     
     /// The selected color of this item
-    var selectedColor: UIColor = UIColor.black
+    public var selectedColor: UIColor = UIColor.black
 }
 
 // MARK: Item Picker View - Variabless & Initializers
 /// Used to select through segmented items, swiping horizontally.
 public class ItemPickerView: UIView {
     /// The delegate for `ItemPickerView`. Set delegate and to handle events.
-    var delegate: ItemPickerViewDelegate?
+    public var delegate: ItemPickerViewDelegate?
     
     /// The data source for `ItemPickerView`. Set the data source to supply data for display.
-    var dataSource: ItemPickerViewDataSource?
+    public var dataSource: ItemPickerViewDataSource?
     
     /// The index for the item that is currently selected. This is a get-only property.
     public private(set) var indexForSelectedItem: Int = 0
     
     /// The number of items in this `ItemPickerView`. This is a get-only property.
-    private(set) var numberOfItems: Int = 0
+    public private(set) var numberOfItems: Int = 0
     
     /// A dictionary of items keyed by their respective indices. This is a get-only property.
-    private(set) var items = [Int: Item]()
+    public private(set) var items = [Int: Item]()
     
     /// Sets the width of the left and right gradients. Set to 0 to remove the gradients.
-    var gradientWidth: CGFloat = 100 {
+    public var gradientWidth: CGFloat = 100 {
         didSet {
             self.layoutSubviews()
         }
     }
     
     /// Sets the color of the left and right gradients.
-    var gradientColor: UIColor = UIColor.black {
+    public var gradientColor: UIColor = UIColor.black {
         didSet {
             let gradientColors = [self.gradientColor.cgColor, self.gradientColor.withAlphaComponent(0).cgColor]
             
