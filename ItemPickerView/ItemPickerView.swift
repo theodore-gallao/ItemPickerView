@@ -126,6 +126,8 @@ public class ItemPickerView: UIView {
         }
     }
     
+    private var didSwipe = false // This is used as a flag. If true when called, call delegate protocol didSelectItem
+    
     private lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: self.collectionViewFlowLayout)
         collectionView.backgroundColor = UIColor.clear
@@ -237,19 +239,23 @@ public class ItemPickerView: UIView {
         if index == 0 {
             if xTranslation < -40 {
                 sender.isEnabled = false
+                self.didSwipe = true
                 self.selectItem(at: index + 1, animated: true)
             }
         } else if index == self.numberOfItems - 1 {
             if xTranslation > 40 {
                 sender.isEnabled = false
+                self.didSwipe = true
                 self.selectItem(at: index - 1, animated: true)
             }
         } else {
             if xTranslation < -40 {
                 sender.isEnabled = false
+                self.didSwipe = true
                 self.selectItem(at: index + 1, animated: true)
             } else if xTranslation > 40 {
                 sender.isEnabled = false
+                self.didSwipe = true
                 self.selectItem(at: index - 1, animated: true)
             }
         }
@@ -318,6 +324,12 @@ extension ItemPickerView {
         if index < 0 || index >= self.numberOfItems {
             return
         }
+        
+        if self.didSwipe {
+            self.delegate?.itemPickerView(self, didSelectItemAtIndex: index)
+        }
+        
+        self.didSwipe = false
         
         if animated {
             _ = UIImpactFeedbackGenerator(style: UIImpactFeedbackGenerator.FeedbackStyle.light).impactOccurred()
