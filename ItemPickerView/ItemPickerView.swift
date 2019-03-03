@@ -307,6 +307,8 @@ extension ItemPickerView {
         if index < 0 || index >= self.numberOfItems {
             print("ERROR: Index (\(index) out of range.")
             return
+        } else {
+            print(index)
         }
         
         if animated {
