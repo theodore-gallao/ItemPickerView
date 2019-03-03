@@ -16,6 +16,6 @@ Pod::Spec.new do |spec|
     spec.source        = { :git => 'https://github.com/theodore-gallao/ItemPickerView.git', :tag => '0.0.1' }
     spec.source_files  = 'ItemPickerView/*.swift'
     spec.platform      = :ios, '10.0'
-    spec.swift_version = '4.2.3'
+    spec.swift_version = '4.2'
     spec.ios.framework = 'UIKit'
 end
