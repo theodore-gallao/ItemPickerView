@@ -48,16 +48,27 @@ public protocol ItemPickerViewDataSource {
 /// Represents an item used for `ItemPickerView`
 public struct Item {
     /// The text of this item
-    public var text: String = ""
+    public var text: String
     
     /// The font of this item's text
-    public var font: UIFont = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.regular)
+    public var font: UIFont
     
     /// The text color of this item
-    public var color: UIColor = UIColor.gray
+    public var color: UIColor
     
     /// The selected color of this item
-    public var selectedColor: UIColor = UIColor.black
+    public var selectedColor: UIColor
+    
+    public init(text: String = "",
+                font: UIFont = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.semibold),
+                color: UIColor = UIColor.gray,
+                selectedColor: UIColor = UIColor.black)
+    {
+        self.text = text
+        self.font = font
+        self.color = color
+        self.selectedColor = selectedColor
+    }
 }
 
 // MARK: Item Picker View - Variabless & Initializers
@@ -121,6 +132,7 @@ public class ItemPickerView: UIView {
         collectionView.allowsSelection = true
         collectionView.allowsMultipleSelection = false
         collectionView.isScrollEnabled = false
+        collectionView.isUserInteractionEnabled = false
         collectionView.alwaysBounceHorizontal = false
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.translatesAutoresizingMaskIntoConstraints = false
