@@ -132,7 +132,6 @@ public class ItemPickerView: UIView {
         collectionView.allowsSelection = true
         collectionView.allowsMultipleSelection = false
         collectionView.isScrollEnabled = false
-        collectionView.isUserInteractionEnabled = false
         collectionView.alwaysBounceHorizontal = false
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.translatesAutoresizingMaskIntoConstraints = false
