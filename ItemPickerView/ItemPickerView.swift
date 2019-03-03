@@ -28,7 +28,7 @@ public protocol ItemPickerViewDelegate {
 }
 
 // MARK: Item Picker View Delegate - Default/Optional Methods
-internal extension ItemPickerViewDelegate {
+public extension ItemPickerViewDelegate {
     func itemPickerView(_ itemPickerView: ItemPickerView, didSelectItemAtIndex index: Int) {
         // This protocol method is optional.
     }
@@ -317,10 +317,7 @@ extension ItemPickerView {
     /// Selects the item at the given index with or without animation.
     public func selectItem(at index: Int, animated: Bool) {
         if index < 0 || index >= self.numberOfItems {
-            print("ERROR: Index (\(index) out of range.")
             return
-        } else {
-            print(index)
         }
         
         if animated {
