@@ -105,13 +105,13 @@ Appearance properties of `ItemPickerView`.
 #### Gradient Width
 The width of the left and right gradients. Set to 0 to remove gradients.
 ``` swift
-ItemPickerView().gradientWidth
+self.itemPickerView.gradientWidth
 ```
 
 #### Gradient Color
 The color of the left and right gradients. Ideally, set this to the same value as itemPickerView.backgroundColor.
 ``` swift
-ItemPickerView().gradientColor
+self.itemPickerView.gradientColor
 ```
 
 ### Item
@@ -120,23 +120,27 @@ Appearance properies of `Item`.
 #### Text
 The text of this item
 ``` swift
-Item().text
+let item = Item()
+item.text
 ```
 
 #### Font
 The font of this item's text
 ``` swift
-Item().font
+let item = Item()
+item.font
 ```
 #### Color
 The text color of this item
 ``` swift
-Item().color
+let item = Item()
+item.color
 ```
 #### Selected Color
 The selected color of this item
 ``` swift
-Item().selectedColor
+let item = Item()
+item.selectedColor
 ```
 
 ## Authors
