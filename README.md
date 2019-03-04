@@ -1,10 +1,10 @@
 # ItemPickerView
 Swipe horizontally or tap to select through segmented items. 
 
-`ItemPickerView` is a `UIView` subclass that functions as a picker for the items that it contains. Items may be selected by tapping or swiping (they may also be selected programatically), and the selected item will be positioned in the horizontal center of the view. Pass `Item` objects through the data source and handle events like selection through the delegate, much like `UICollectionView` or `UITableView` data sources and delegates. Since it is just a view, you can layout and constrain the `ItemPickerView` to any reasonable dimension, making it versatile and applicable to various scenarios.
-
 ![Demo](https://github.com/theodore-gallao/ItemPickerView/blob/master/Demos/ItemPickerView_Demo.gif)
 ![Applied Demo](https://github.com/theodore-gallao/ItemPickerView/blob/master/Demos/ItemPickerView_Applied_Demo.gif)
+
+`ItemPickerView` is a `UIView` subclass that functions as a picker for the items that it contains. Items may be selected by tapping or swiping (they may also be selected programatically), and the selected item will be positioned in the horizontal center of the view. Pass `Item` objects through the data source and handle events like selection through the delegate, much like `UICollectionView` or `UITableView` data sources and delegates. Since it is just a view, you can layout and constrain the `ItemPickerView` to any reasonable dimension, making it versatile and applicable to various scenarios.
 
 ## Prerequisites
 Swift 4.2+, iOS 10+, CocoaPods
