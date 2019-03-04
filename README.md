@@ -102,14 +102,12 @@ Change the appearance properties of `ItemPickerView` and `Item`.
 ### ItemPickerView
 Appearance properties of `ItemPickerView`.
 
-#### Gradient Width
-The width of the left and right gradients, default `100`. Set to 0 to remove gradients.
+**Gradient Width** - The width of the left and right gradients, default `100`. Set to 0 to remove gradients.
 ``` swift
 self.itemPickerView.gradientWidth = 100
 ```
 
-#### Gradient Color
-The color of the left and right gradients, default `UIColor.black`. Ideally, set this to the same value as itemPickerView.backgroundColor.
+**Gradient Color** - The color of the left and right gradients, default `UIColor.black`. Ideally, set this to the same value as itemPickerView.backgroundColor.
 ``` swift
 self.itemPickerView.gradientColor = UIColor.black
 ```
@@ -117,34 +115,30 @@ self.itemPickerView.gradientColor = UIColor.black
 ### Item
 Appearance properies of `Item`, default `""`
 
-#### Text
-The text of this item
+**Text** - The text of this item
 ``` swift
 let item = Item()
 item.text = ""
 ```
 
-#### Font
-The font of this item's text, default `UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.semibold)`
+**Font** - The font of this item's text, default `UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.semibold)`
 ``` swift
 let item = Item()
 item.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.semibold)
 ```
-#### Color
-The text color of this item, default `UIColor.gray`
+**Color** - The text color of this item, default `UIColor.gray`
 ``` swift
 let item = Item()
 item.color = UIColor.gray
 ```
-#### Selected Color
-The selected color of this item, default `Default UIColor.black`
+**Selected Color** - The selected color of this item, default `Default UIColor.black`
 ``` swift
 let item = Item()
 item.selectedColor = Default UIColor.black
 ```
 
 ## Authors
-Theodore Gallao - [GitHub](https://github.com/theodore-gallao)
+**Theodore Gallao** - [GitHub](https://github.com/theodore-gallao)
 
 ## License
 This project is under the MIT license. See [LICENSE.md](https://github.com/theodore-gallao/ItemPickerView/blob/master/LICENSE).
