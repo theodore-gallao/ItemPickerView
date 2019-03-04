@@ -97,17 +97,17 @@ func itemPickerView(_ itemPickerView: ItemPickerView, didSelectItemAtIndex index
 ```
 
 ## Appearance
-Change the appearance properties of `ItemPickerView` and `Item`.
+Change the appearance properties of `ItemPickerView` and `Item`
 
 ### ItemPickerView
 Appearance properties of `ItemPickerView`.
 
-**Gradient Width** - The width of the left and right gradients, default `100`. Set to 0 to remove gradients.
+**Gradient Width** - The width of the left and right gradients, default `100`, set to `0` to remove gradients
 ``` swift
 self.itemPickerView.gradientWidth = 100
 ```
 
-**Gradient Color** - The color of the left and right gradients, default `UIColor.black`. Ideally, set this to the same value as itemPickerView.backgroundColor.
+**Gradient Color** - The color of the left and right gradients, default `UIColor.black`. Ideally, set this to the same value as `itemPickerView.backgroundColor`
 ``` swift
 self.itemPickerView.gradientColor = UIColor.black
 ```
