@@ -95,6 +95,50 @@ func itemPickerView(_ itemPickerView: ItemPickerView, didSelectItemAtIndex index
     // Handle item selection at given index.
 }
 ```
+
+## Appearance
+Change the appearance properties of `ItemPickerView` and `Item`.
+
+### ItemPickerView
+Appearance properties of `ItemPickerView`.
+
+#### Gradient Width
+The width of the left and right gradients. Set to 0 to remove gradients.
+``` swift
+itemPickerView.gradientWidth
+```
+
+#### Gradient Color
+The color of the left and right gradients. Ideally, set this to the same value as itemPickerView.backgroundColor.
+``` swift
+itemPickerView.gradientColor
+```
+
+### Item
+Appearance properies of `Item`.
+
+#### Text
+The text of this item
+``` swift
+item.text
+```
+
+#### Font
+The font of this item's text
+``` swift
+item.font
+```
+#### Color
+The text color of this item
+``` swift
+item.color
+```
+#### Selected Color
+The selected color of this item
+``` swift
+item.selectedColor
+```
+
 ## Authors
 Theodore Gallao - [GitHub](https://github.com/theodore-gallao)
 
