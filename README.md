@@ -21,7 +21,7 @@ Import the framework
 import ItemPickerView
 ```
 
-Create an ItemPickerView object
+Create an `ItemPickerView` object
 ``` swift
 var itemPickerView: ItemPickerView!
 
@@ -32,7 +32,7 @@ override func viewDidLoad() {
 }
 ```
 
-Set properties
+Set `ItemPickerView` properties
 ``` swift
 override func viewDidLoad() {
     // ...
@@ -54,7 +54,7 @@ override func viewDidLoad() {
 } 
 ```
 
-Layout the ItemPickerView
+Layout the `ItemPickerView`
 ``` swift
 override func viewDidLoad() {
     // ...
