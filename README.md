@@ -103,44 +103,44 @@ Change the appearance properties of `ItemPickerView` and `Item`.
 Appearance properties of `ItemPickerView`.
 
 #### Gradient Width
-The width of the left and right gradients. Set to 0 to remove gradients.
+The width of the left and right gradients, default `100`. Set to 0 to remove gradients.
 ``` swift
-self.itemPickerView.gradientWidth
+self.itemPickerView.gradientWidth = 100
 ```
 
 #### Gradient Color
-The color of the left and right gradients. Ideally, set this to the same value as itemPickerView.backgroundColor.
+The color of the left and right gradients, default `UIColor.black`. Ideally, set this to the same value as itemPickerView.backgroundColor.
 ``` swift
-self.itemPickerView.gradientColor
+self.itemPickerView.gradientColor = UIColor.black
 ```
 
 ### Item
-Appearance properies of `Item`.
+Appearance properies of `Item`, default `""`
 
 #### Text
 The text of this item
 ``` swift
 let item = Item()
-item.text
+item.text = ""
 ```
 
 #### Font
-The font of this item's text
+The font of this item's text, default `UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.semibold)`
 ``` swift
 let item = Item()
-item.font
+item.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.semibold)
 ```
 #### Color
-The text color of this item
+The text color of this item, default `UIColor.gray`
 ``` swift
 let item = Item()
-item.color
+item.color = UIColor.gray
 ```
 #### Selected Color
-The selected color of this item
+The selected color of this item, default `Default UIColor.black`
 ``` swift
 let item = Item()
-item.selectedColor
+item.selectedColor = Default UIColor.black
 ```
 
 ## Authors
