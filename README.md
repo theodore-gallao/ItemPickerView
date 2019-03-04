@@ -9,7 +9,7 @@ Swift 4.2+, iOS 10+, CocoaPods
 
 ## Installation
 Cocoapods
-```
+``` ruby
 pod 'ItemPickerView', :git=> 'https://github.com/theodore-gallao/ItemPickerView.git'
 ```
 
