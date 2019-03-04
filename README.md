@@ -107,7 +107,7 @@ Appearance properties of `ItemPickerView`.
 self.itemPickerView.gradientWidth = 100
 ```
 
-**Gradient Color** - The color of the left and right gradients, default `UIColor.black`. Ideally, set this to the same value as `itemPickerView.backgroundColor`
+**Gradient Color** - The color of the left and right gradients, default `UIColor.black`. Ideally, set this to the same value as `self.itemPickerView.backgroundColor`
 ``` swift
 self.itemPickerView.gradientColor = UIColor.black
 ```
