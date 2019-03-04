@@ -95,4 +95,4 @@ func itemPickerView(_ itemPickerView: ItemPickerView, didSelectItemAtIndex index
 **Theodore Gallao**
 
 ## License
-This project is under the MIT license. See [LICENSE.md](LICENSE.md) file for details
+This project is under the MIT license. See [LICENSE.md](https://github.com/theodore-gallao/ItemPickerView/blob/master/LICENSE).
