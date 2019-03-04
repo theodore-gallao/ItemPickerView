@@ -9,7 +9,9 @@ Swift 4.2+, iOS 10+, CocoaPods
 
 ## Installation
 Cocoapods
-`pod 'ItemPickerView', :git=> 'https://github.com/theodore-gallao/ItemPickerView.git'`
+```
+pod 'ItemPickerView', :git=> 'https://github.com/theodore-gallao/ItemPickerView.git'
+```
 
 ## Usage
 Import the framework
@@ -22,6 +24,8 @@ Create an ItemPickerView object
 var itemPickerView: ItemPickerView!
 
 override func viewDidLoad() {
+    super.viewDidLoad()
+    
     self.itemPickerView = ItemPickerView()
 }
 ```
@@ -92,7 +96,7 @@ func itemPickerView(_ itemPickerView: ItemPickerView, didSelectItemAtIndex index
 }
 ```
 ## Authors
-**Theodore Gallao**
+Theodore Gallao - [GitHub](https://github.com/theodore-gallao)
 
 ## License
 This project is under the MIT license. See [LICENSE.md](https://github.com/theodore-gallao/ItemPickerView/blob/master/LICENSE).
