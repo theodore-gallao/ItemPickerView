@@ -8,7 +8,7 @@ Swipe horizontally or tap to select through segmented items.
 Swift 4.2+, iOS 10+, CocoaPods
 
 ## Installation
-Cocoapods
+CocoaPods
 ``` ruby
 pod 'ItemPickerView', :git=> 'https://github.com/theodore-gallao/ItemPickerView.git'
 ```
