@@ -313,6 +313,9 @@ public class ItemPickerView: UIView {
     
     public func invalidateLayout() {
         self.collectionViewFlowLayout.invalidateLayout()
+        self.collectionView.reloadData()
+        
+        self.collectionView.scrollToItem(at: IndexPath(item: self.indexForSelectedItem, section: 0), at: UICollectionView.ScrollPosition.centeredHorizontally, animated: true)
     }
     
     public func reloadData() {
