@@ -260,6 +260,10 @@ public class ItemPickerView: UIView {
             }
         }
     }
+    
+    public func reloadData() {
+        self.collectionView.reloadData()
+    }
 }
 
 // MARK: Item Picker View - Collection View
