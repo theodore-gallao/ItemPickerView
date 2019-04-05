@@ -89,6 +89,27 @@ public class ItemPickerView: UIView {
     /// A dictionary of items keyed by their respective indices. This is a get-only property.
     public private(set) var items = [Int: Item]()
     
+    public var isIndicatorHidden: Bool = false {
+        didSet {
+            self.indicatorView.alpha = self.isIndicatorHidden ? 0 : 1
+        }
+    }
+    
+    public var indicatorColor: UIColor = UIColor.black {
+        didSet {
+            self.indicatorView.backgroundColor = self.indicatorColor
+        }
+    }
+    
+    public var indicatorHeight: CGFloat = 3.5 {
+        didSet {
+            UIView.animate(withDuration: 1/3) {
+                self.configureLayout()
+                self.layoutIfNeeded()
+            }
+        }
+    }
+    
     /// Sets the width of the left and right gradients. Set to 0 to remove the gradients.
     public var gradientWidth: CGFloat = 100 {
         didSet {
@@ -103,6 +124,16 @@ public class ItemPickerView: UIView {
             
             self.leftGradientLayer.colors = gradientColors
             self.rightGradientLayer.colors = gradientColors
+        }
+    }
+    
+    private var selectedCellWidth: CGFloat {
+        if let itemItem = self.items[self.indexForSelectedItem] {
+            let width = itemItem.text.width(heightConstraint: self.collectionView.frame.height, font: itemItem.font)
+            
+            return width
+        } else {
+            return 0
         }
     }
     
@@ -155,6 +186,14 @@ public class ItemPickerView: UIView {
         return collectionViewFlowLayout
     }()
     
+    private let indicatorView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.black
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        return view
+    }()
+    
     private let leftGradientLayer: CAGradientLayer = {
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [UIColor.black.cgColor, UIColor.clear.cgColor]
@@ -179,6 +218,8 @@ public class ItemPickerView: UIView {
         return panGestureRecognizer
     }()
     
+    private var indicatorViewConstraints = [NSLayoutConstraint]()
+    
     init() {
         super.init(frame: CGRect.zero)
         
@@ -197,11 +238,14 @@ public class ItemPickerView: UIView {
     
     private func commonInit() {
         self.addSubview(self.collectionView)
+        self.addSubview(self.indicatorView)
         
         self.collectionView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
         self.collectionView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 10).isActive = true
         self.collectionView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -10).isActive = true
         self.collectionView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0).isActive = true
+        
+        self.configureLayout()
         
         self.layer.addSublayer(self.leftGradientLayer)
         self.layer.addSublayer(self.rightGradientLayer)
@@ -209,6 +253,19 @@ public class ItemPickerView: UIView {
         self.addGestureRecognizer(self.panGestureRecognizer)
         
         self.panGestureRecognizer.addTarget(self, action: #selector(self.handlePanGestureRecognizer(_:)))
+    }
+    
+    private func configureLayout() {
+        NSLayoutConstraint.deactivate(self.indicatorViewConstraints)
+        
+        self.indicatorViewConstraints = [
+            self.indicatorView.heightAnchor.constraint(equalToConstant: self.indicatorHeight),
+            self.indicatorView.widthAnchor.constraint(equalToConstant: self.selectedCellWidth),
+            self.indicatorView.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 0),
+            self.indicatorView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0)
+        ]
+        
+        NSLayoutConstraint.activate(self.indicatorViewConstraints)
     }
     
     override public func layoutSubviews() {
@@ -224,6 +281,7 @@ public class ItemPickerView: UIView {
                                                width: self.gradientWidth,
                                                height: self.collectionView.frame.height)
     }
+    
     
     @objc private func handlePanGestureRecognizer(_ sender: UIPanGestureRecognizer) {
         let xTranslation = sender.translation(in: self).x
@@ -259,6 +317,10 @@ public class ItemPickerView: UIView {
                 self.selectItem(at: index - 1, animated: true)
             }
         }
+    }
+    
+    public func invalidateLayout() {
+        self.collectionViewFlowLayout.invalidateLayout()
     }
     
     public func reloadData() {
@@ -350,5 +412,10 @@ extension ItemPickerView {
         
         self.indexForSelectedItem = index
         self.collectionView.reloadData()
+        
+        UIView.animate(withDuration: 1/3) {
+            self.configureLayout()
+            self.layoutIfNeeded()
+        }
     }
 }
