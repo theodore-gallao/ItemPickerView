@@ -127,15 +127,7 @@ public class ItemPickerView: UIView {
         }
     }
     
-    private var selectedCellWidth: CGFloat {
-        if let itemItem = self.items[self.indexForSelectedItem] {
-            let width = itemItem.text.width(heightConstraint: self.collectionView.frame.height, font: itemItem.font)
-            
-            return width
-        } else {
-            return 0
-        }
-    }
+    private var selectedCellWidth: CGFloat  = 0
     
     private var firstCellWidth: CGFloat {
         if let itemItem = self.items[0] {
@@ -359,6 +351,15 @@ extension ItemPickerView: UICollectionViewDelegate, UICollectionViewDelegateFlow
         let text = item.text
         let width = text.width(heightConstraint: collectionView.frame.height, font: item.font)
         
+        if indexPath.item == self.indexForSelectedItem {
+            self.selectedCellWidth = width
+            
+            UIView.animate(withDuration: 1/3) {
+                self.configureLayout()
+                self.layoutIfNeeded()
+            }
+        }
+        
         self.items[indexPath.item] = item
         
         return CGSize(width: width, height: collectionView.frame.height)
@@ -412,10 +413,5 @@ extension ItemPickerView {
         
         self.indexForSelectedItem = index
         self.collectionView.reloadData()
-        
-        UIView.animate(withDuration: 1/3) {
-            self.configureLayout()
-            self.layoutIfNeeded()
-        }
     }
 }
